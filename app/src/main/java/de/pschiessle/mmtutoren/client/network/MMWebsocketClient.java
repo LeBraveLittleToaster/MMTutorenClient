@@ -16,7 +16,7 @@ public class MMWebsocketClient extends WebSocketClient {
 
     @Override
     public void onOpen(ServerHandshake handshakedata) {
-
+        System.out.println("ON OPEN=" + handshakedata.getHttpStatusMessage());
     }
 
     @Override

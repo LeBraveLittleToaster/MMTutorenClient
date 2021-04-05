@@ -20,4 +20,12 @@ public class Networker {
         if(client != null) client.close();
         client = null;
     }
+
+    public void send(String message) {
+        if(client.isOpen()) {
+            client.send(message);
+        }else{
+            System.out.println("Client is not connected yet...");
+        }
+    }
 }

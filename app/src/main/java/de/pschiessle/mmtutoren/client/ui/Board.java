@@ -66,6 +66,7 @@ public class Board extends JPanel {
 
             @Override
             public void mouseReleased(MouseEvent e) {
+                if(hoveredTile != null && e.getButton() == MouseEvent.BUTTON3) onHoveredTileClicked(hoveredTile);
                 startPosX = null;
                 startPosY = null;
             }
@@ -103,7 +104,6 @@ public class Board extends JPanel {
                 int posY = e.getY() - camera.getOffsetY();
                 int iX = (int)(posX / (camera.getZoom() * TILE_SOURCE_SIZE));
                 int iY = (int)(posY / (camera.getZoom() * TILE_SOURCE_SIZE));
-                System.out.println("["+ iX + "," + iY + "]");
                 board.getTile(iX, iY).ifPresent(tile -> {
                     if(hoveredTile != null) hoveredTile.setHovered(false);
                     tile.setHovered(true);
@@ -112,6 +112,10 @@ public class Board extends JPanel {
                 });
             }
         });
+    }
+
+    private void onHoveredTileClicked(VisualTile hoveredTile) {
+        System.out.println("Clicked on Tile " + hoveredTile.getTileType());
     }
 
     public void loadPictures() {
