@@ -1,13 +1,23 @@
 package de.pschiessle.mmtutoren.client.ui;
 
+import de.pschiessle.mmtutoren.client.network.NetConst;
+import de.pschiessle.mmtutoren.client.network.Networker;
 import de.pschiessle.mmtutoren.client.ui.visualobj.VisualCamera;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class Application extends JFrame {
+
+    private Networker networker;
+
     public Application(){
         initUI();
+        initNetwork();
+    }
+
+    private void initNetwork() {
+        this.networker = new Networker(NetConst.DEFAULT_URL, System.out::println);
     }
 
     private void initUI() {
