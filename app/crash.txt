@@ -1,0 +1,4 @@
+Mon Apr 05 16:25:07 CEST 2021 main threw an exception:
+java.lang.NullPointerException
+	at de.pschiessle.mmtutoren.client.GameInit.startGame(GameInit.java:30)
+	at de.pschiessle.mmtutoren.client.GameInit.main(GameInit.java:35)
