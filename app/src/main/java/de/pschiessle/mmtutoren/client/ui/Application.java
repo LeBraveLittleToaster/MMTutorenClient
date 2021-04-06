@@ -18,8 +18,13 @@ public class Application extends JFrame {
     private Networker networker;
 
     public Application(){
+        initRessources();
         initUI();
         initNetwork();
+    }
+
+    private void initRessources() {
+        ImageRessourceLoader.getInstance().loadImages();
     }
 
     private void initNetwork() {

@@ -1,5 +1,8 @@
 package de.pschiessle.mmtutoren.client.ui.visualobj;
 
+import javax.swing.*;
+import java.util.jar.JarEntry;
+
 public class VisualCamera {
     private float zoom;
     private int offsetX;
